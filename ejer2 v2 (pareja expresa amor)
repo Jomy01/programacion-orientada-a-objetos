@@ -1,0 +1,62 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Persona persona1 = new Persona();
+		Persona persona2 = new Persona();
+		Pareja parejaBonita = new Pareja();
+		
+		persona1.nombre = "Doraemon";
+		persona2.nombre = "Goku";
+		
+		persona1.edad = 25;
+		persona2.edad = 30;
+		// despues de escribir el void del final, que sirve para que	
+		parejaBonita.CrearPareja(persona1, persona2);
+		
+		parejaBonita.ExpresarAmor();
+	}
+}
+	
+//creamos una clase Persona 
+public class Persona
+{
+	//necesitamos el nombre y la edad
+	public string nombre;
+	public int edad;
+	
+	//necesita el metodo saludar
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, soy " + nombre + " y tengo " + edad + " años");
+		
+	}
+}
+//creamos la clase pareja
+public class Pareja
+{
+	//no son variable spublicas, hay que crear un metodo que las asigne public void
+	 Persona miembro1;
+	 Persona miembro2;
+	
+	public void ExpresarAmor()
+	{
+	//para asegurarnos de que la paraeja tiene dos miembros
+	if (miembro1 == null || miembro2 == null)
+	{
+		Console.WriteLine("ERROR: pareja no inicializada");
+	 }
+	else
+ {
+	
+	Console.WriteLine("Hola, somos " + miembro1.nombre + " y " + miembro2.nombre + " y nos queremos mucho");
+	}
+}
+	public void CrearPareja(Persona p1, Persona p2)
+	{
+		miembro1 = p1;
+		miembro2 = p2;
+	}
+}
