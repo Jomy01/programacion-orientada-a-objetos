@@ -1,0 +1,53 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	//segundo creamos un tipo dentro de la clase Persona y asignamos los nombres y edades
+	Persona persona1 = new Persona();
+	Persona persona2 = new Persona();
+	Persona persona3 = new Persona();
+
+		
+		persona1.nombre = "Ambrosio";
+		persona2.nombre= "Eustaquio";
+		persona3.nombre= "Darth VAder";
+		
+		persona1.edad = 80;
+		persona2.edad = 25;
+		persona3.edad = 100;
+		
+		persona1.padre = persona3;
+		persona2.padre = persona3;
+		
+		persona1.Saludar();
+		persona2.Saludar();
+		persona3.Saludar();
+	}
+}
+//primero	
+//creamos una clase Persona 
+public class Persona
+{
+	//necesitamos el nombre y la edad
+	public string nombre;
+	public int edad;
+	//para saber si tiene padre
+	public Persona padre;
+	//necesita el metodo saludar
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, soy " + nombre + " y tengo " + edad + " años");
+		//comprobamos si tiene padre con un if pq darth vader no tiene padre y daría problemas
+		
+		if (padre == null)
+		{
+			Console.WriteLine("...y no tengo padre");	
+		}
+		else
+		{
+		Console.WriteLine("...y mi padre se llama " + padre.nombre);
+		}
+	}
+}
