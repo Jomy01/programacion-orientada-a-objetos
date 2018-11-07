@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	//segundo creamos un tipo dentro de la clase Persona y asignamos los nombres y edades
+	Persona persona1 = new Persona();
+	Persona persona2 = new Persona();
+		
+		persona1.nombre = "Ambrosio";
+		persona2.nombre= "Eustaquio";
+		
+		persona1.edad = 80;
+		persona2.edad = 25;
+		
+		persona1.Saludar();
+		persona2.Saludar();
+	}
+}
+//primero	
+//creamos una clase Persona 
+public class Persona
+{
+	//necesitamos el nombre y la edad
+	public string nombre;
+	public int edad;
+	//necesita el metodo saludar
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, soy " + nombre + " y tengo " + edad + " años");
+	}
+}
