@@ -1,0 +1,47 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	string	nombrePersona1;
+	string nombrePersona2;
+		int edadPersona1;
+		int edadPersona2;
+		
+		nombrePersona1= "Ambrosio";
+		nombrePersona2= "Eustaquio";
+		
+		edadPersona1 = 80;
+		edadPersona2 = 25;
+		
+		Console.WriteLine("Hola, soy " + nombrePersona1 + " y tengo " + edadPersona1 + " años");
+		Console.WriteLine("Hola, soy " + nombrePersona2 + " y tengo " + edadPersona2 + " años");
+		//en vez de console.writeline iria
+		Saludar (nombrePersona1, edadPersona1);
+		Saludar (nombrePersona2, edadPersona2);
+	}
+	
+	//metodo para saludar que necesita un nombre y una edad
+	static void Saludar(string nombre, int edad)
+	{	
+	Console.WriteLine("Hola, soy " + nombre + " y tengo " + edad + " años");
+		
+	//el void no devuelve nada y lo que hay en paréntesis es que va a recibir esos datos
+	//habíra que escribir el saludar más arriba, fuera del void (dentro del main), de manera que quedaría:
+	
+	}
+}
+
+//creamos una clase Persona a partir de edadPersona2 = 25, sin el resto
+public class Persona
+{
+	//necesitamos el nombre y la edad
+	public string nombre;
+	public int edad;
+	//necesita el metodo saludar
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, soy " + nombre + " y tengo " + edad + " años");
+	}
+}
