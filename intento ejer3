@@ -1,0 +1,64 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Personaje personaje1 = new Personaje();
+		Personaje personaje2 = new Personaje();
+		
+		personaje1.nombre = "Doraemon";
+		personaje2.nombre = "Goku";
+		
+		personaje1.nivel = 25;
+		personaje2.nivel = 30;
+		
+		personaje1.Saludar();
+		personaje2.Saludar();
+		
+		Combate combate1 = new Combate();
+		combate1.CrearCombate(personaje1, personaje2);
+		
+		//parejaBonita.miembro1 = persona1;
+		//parejaBonita.miembro2 = persona2;
+		
+		//parejaBonita.ExpresarAmor();
+	}
+}
+	
+//creamos una clase Persona 
+public class Personaje
+{
+	//necesitamos el nombre y la edad
+	public string nombre;
+	public int nivel;
+	
+	//necesita el metodo saludar
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, soy " + nombre + " y mi nivel es " + nivel);
+		
+	}
+}
+//creamos la clase combate
+public class Combate
+{
+	 private Personaje personaje1;
+	 private Personaje personaje2;
+	 
+	
+	public void CrearCombate(Personaje pj1, Personaje pj2)
+	{
+	//para asegurarnos de que el combate tiene dos miembros
+	if (pj1 == null || pj2 == null)
+	{
+		Console.WriteLine("ERROR: combate no inicializado");
+	 }
+	else
+{
+	personaje1 = pj1;
+	personaje2 = pj2;
+	}
+}
+}
+	
