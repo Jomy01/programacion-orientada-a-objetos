@@ -1,0 +1,78 @@
+using System;					
+public class Program
+{
+	public static void Main()
+	{
+		// Declaración de variables
+		Personaje personaje1 = new Personaje();
+		Personaje personaje2 = new Personaje();
+		Combate bloodycombat = new Combate();
+		
+		// Inicialización de las personas
+		Console.WriteLine("Introduce el nombre del primer personaje: ");
+		personaje1.nombre = Console.ReadLine();
+			Console.WriteLine("Introduce el nombre del segundo personaje: ");
+		personaje2.nombre = Console.ReadLine();
+		Console.WriteLine("Introduce el nivel del primer personaje: ");
+		personaje1.nivel = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Introduce el nivel del segundo personaje: ");
+		personaje2.nivel = Convert.ToInt32(Console.ReadLine());
+		
+		personaje1.Saludar();
+		personaje2.Saludar();
+		
+		bloodycombat.CrearCombate(personaje1, personaje2);
+		bloodycombat.CrearCombate();
+		
+	}
+}
+
+public class Personaje
+{
+	public string nombre;
+	public int nivel;
+	
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, me llamo " + nombre + " y mi nivel es "+ nivel);
+	}
+}
+
+public class Combate
+{
+	private Personaje personaje1;
+	private Personaje personaje2;
+	
+	public void CrearCombate()
+	{
+		if (personaje1 == null || personaje2 == null)
+		{
+			Console.WriteLine("ERROR: el combate está vacío");
+		}
+		else
+		{
+			Console.WriteLine("Comienza el  combate entre "+ personaje1.nombre + " y " + personaje2.nombre);
+		}
+	}
+	
+	public void CrearCombate(Personaje p1, Personaje p2)
+	{
+		personaje1 = p1;
+		personaje2 = p2;
+		
+		if (personaje1.nivel < personaje2.nivel)
+		{
+			Console.WriteLine("El ganador es " + personaje2.nombre);
+		}
+		else if (personaje1.nivel > personaje2.nivel)
+				 {
+					Console.WriteLine("El ganador es " + personaje1.nombre);
+				 }
+				 else
+				 {
+					 Console.WriteLine("El combate está empatado");
+				 }
+	}
+	
+	
+}
