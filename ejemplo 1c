@@ -1,0 +1,28 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		// Declaración de variables
+		Persona persona1 = new Persona();
+		Persona persona2 = new Persona();
+		
+		// Inicialización de las personas
+		persona1.nombre = Console.ReadLine();
+		persona2.nombre = Console.ReadLine();
+		
+		persona1.Saludar();
+		persona2.Saludar();
+	}
+}
+
+public class Persona
+{
+	public string nombre;
+	
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, me llamo " + nombre);
+	}
+}
