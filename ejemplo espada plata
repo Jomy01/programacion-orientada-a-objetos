@@ -1,0 +1,54 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Persona pers = new Persona();
+		
+		pers.nombre = "Michaelle";
+		pers.edad = 19;
+		
+		// Michel saluda desarmada
+		pers.Saludar();
+
+		// Vamos a darle un arma a Michelle
+
+		// Creamos el arma:
+		Arma miArma = new Arma();
+		miArma.nombre = "Espada de plata";
+		
+		// Equipamos el arma:
+		pers.armaEquipada = miArma;
+
+		// Michel saluda con un arma equipada
+		pers.Saludar();
+
+	}
+}
+
+public class Persona
+{
+	public string nombre = "Sin Nombre";
+	public int edad = -1;
+	public Arma armaEquipada;
+	
+	public void Saludar()
+	{
+		Console.WriteLine("Hola, me llamo " + nombre + " y tengo " + edad);
+		if (armaEquipada == null)
+		{
+			Console.WriteLine(" ... y no tengo arma");
+		}
+		else
+		{
+			Console.WriteLine("... y tengo equipada el arma " + armaEquipada.nombre);
+		}
+	}
+}
+
+public class Arma
+{
+	public string nombre;
+}
+
